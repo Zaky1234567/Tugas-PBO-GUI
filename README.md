@@ -2,7 +2,7 @@
 
 *   **NIM:** F1D02410143
 *   **Nama:** Zaky
-*   **Link Repositori GitHub:** []
+*   **Link Repositori GitHub:** [ https://github.com/Zaky1234567/Tugas-PBO-GUI.git ]
 
 Repositori ini berisi tugas latihan Pemrograman Berorientasi Objek (PBO) mengenai pembuatan *Graphical User Interface* (GUI) menggunakan Java Swing. Aplikasi yang dibuat adalah "Form Biodata Mahasiswa Sederhana".
 
