@@ -1,31 +1,38 @@
-# Tugas PBO - Graphical User Interface (GUI)
+# Eksplorasi Graphical User Interface (GUI) - Java Swing
 
-*   **NIM:** F1D02410143
-*   **Nama:** Zaky
-*   **Link Repositori GitHub:** [ https://github.com/Zaky1234567/Tugas-PBO-GUI.git ]
+**Nama:** Zaky 
+**NIM:** F1D02410143  
+**Kelas:** C  
 
-Repositori ini berisi tugas latihan Pemrograman Berorientasi Objek (PBO) mengenai pembuatan *Graphical User Interface* (GUI) menggunakan Java Swing. Aplikasi yang dibuat adalah "Form Biodata Mahasiswa Sederhana".
+## Deskripsi Program
+Aplikasi desktop sederhana berbasis Java Swing untuk menginput dan menampilkan biodata mahasiswa, dilengkapi dengan validasi input kosong serta interaksi *event handling*.
 
-## Penjelasan Komponen GUI yang Digunakan
+## 5 Komponen Utama GUI yang Digunakan
 
-1.  **Top Level Container:** 
-    Menggunakan kelas `JFrame` yang berfungsi sebagai jendela utama berdirinya seluruh program GUI.
-2.  **Intermediate Component:** 
-    Menggunakan kelas `JPanel` (`panelForm` dan `panelButton`). Berfungsi untuk mengelompokkan form teks dan tombol secara terpisah agar tata letaknya lebih rapi.
-3.  **Atomic Component:** 
-    Komponen spesifik untuk interaksi user, antara lain:
-    *   `JLabel`: Memberikan label tulisan "NIM" dan "Nama".
-    *   `JTextField`: Kolom input satu baris untuk mengetikkan data.
-    *   `JButton`: Tombol aksi (Submit dan Clear).
-    *   `JTextArea`: Area tampilan teks multi-baris untuk mencetak hasil *submit*.
-4.  **Layout Manager:**
-    *   `BorderLayout`: Diterapkan pada `JFrame` utama (menggunakan area `NORTH`, `CENTER`, dan `SOUTH`).
-    *   `GridLayout`: Diterapkan pada `panelForm` untuk mensejajarkan Label dan TextField dalam pola matriks 2x2.
-    *   `FlowLayout`: Diterapkan pada `panelButton` untuk menempatkan tombol bersebelahan secara rapi.
-5.  **Event Handling (Menggunakan 2 Interface):**
-    *   `ActionListener`: Menangani aksi dari klik tombol (memproses input ke text area saat tombol dklik, dan mengosongkannya jika tombol *clear* ditekan).
-    *   `MouseListener`: Memberikan efek visual (hover) saat kursor mouse memasuki atau keluar dari area tombol (mengubah warna latar tombol).
+1. **Top-level Container Class**
+   * `JFrame`: Digunakan sebagai jendela utama aplikasi (`FormBiodata extends JFrame`) yang menampung seluruh komponen antarmuka.
 
-## 📸 Screenshot Interface
+2. **Intermediate Container Class**
+   * `JPanel`: Digunakan untuk mengelompokkan komponen berdasarkan fungsinya (`panelHeader`, `panelForm`, `panelGender`, `panelTengah`, `panelButton`).
+   * `JScrollPane`: Membungkus `JTextArea` agar memiliki fitur gulir (*scrollbar*) otomatis ketika teks melebihi batas area tampilan.
 
-![ss hasil](image.png)
+3. **Atomic Component Class**
+   * `JLabel`: Menampilkan teks keterangan statis pada judul dan setiap kolom input.
+   * `JTextField`: Kolom input teks satu baris untuk mengisi NIM dan Nama Mahasiswa.
+   * `JComboBox`: Menu *dropdown* untuk memilih Program Studi.
+   * `JRadioButton` & `ButtonGroup`: Tombol pilihan tunggal untuk memilih Jenis Kelamin.
+   * `JTextArea`: Area teks multi-baris untuk menampilkan ringkasan biodata yang telah disubmit.
+   * `JButton`: Tombol interaktif untuk mengeksekusi penyimpanan (`Simpan Data`) dan pembersihan formulir (`Reset Form`).
+
+4. **Layout Classes**
+   * `BorderLayout`: Mengatur tata letak utama `JFrame` menjadi bagian atas (`NORTH`), tengah (`CENTER`), dan bawah (`SOUTH`).
+   * `GridLayout`: Menyusun label dan kolom input pada `panelForm` secara rapi dalam format matriks baris dan kolom (4x2).
+   * `FlowLayout`: Mengatur aliran posisi komponen secara horizontal pada `panelHeader`, `panelGender`, dan `panelButton`.
+
+5. **Event Listener (Interface & Adapter Class)**
+   * `ActionListener` *(Interface)*: Meng-override method `actionPerformed()` untuk menangani aksi klik pada tombol Simpan dan Reset.
+   * `MouseListener` *(Interface)*: Meng-override method `mouseEntered()` dan `mouseExited()` untuk memberikan efek perubahan warna (*hover*) saat kursor menyentuh tombol.
+   * `KeyAdapter` *(Adapter Class)*: Meng-override method `keyTyped()` pada kolom NIM agar setiap huruf yang diketik otomatis berubah menjadi huruf kapital (*uppercase*).
+
+## Screenshot Hasil
+![Screenshot Hasil Form Biodata](screenshot/Hasil_GUI.png)
