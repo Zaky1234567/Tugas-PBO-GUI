@@ -1,4 +1,4 @@
-# Eksplorasi Graphical User Interface (GUI) - Java Swing
+# TUGAS LATIHAN GUI
 
 **Nama:** Zaky 
 **NIM:** F1D02410143  
